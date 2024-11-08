@@ -18,7 +18,7 @@ class PhotoValidator:
         self.max_photo_bytes = self.mb_photo_size * 1024 * 1024
 
     def __call__(self, value):
-        if value > self.max_photo_bytes:
+        if value.size > self.max_photo_bytes:
             raise ValidationError(f"The file must be below or equal to {self.mb_photo_size} MB.")
 
 
