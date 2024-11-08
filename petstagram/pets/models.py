@@ -10,7 +10,7 @@ class Pet(models.Model):
 
     date_of_birth = models.DateField(blank=True, null=True)
 
-    slug = models.SlugField(blank=True, null=False, unique=True)
+    slug = models.SlugField(blank=True, null=True, unique=True, editable=False)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
